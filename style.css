@@ -9,4 +9,11 @@ body {
   align-items: center;
   text-align: center;
   min-height: 100vh;
-}  
+}
+.timer{
+  position: bottom;
+  top: 80%;
+  align-items: bottom;
+  text-align: center;
+  min-height: 50px;
+}
