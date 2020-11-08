@@ -1,6 +1,10 @@
 body {
-    background-color: black;
-    color: white;
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   }
 .center-text {
   display: flex;
@@ -8,6 +12,7 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
+  font: 45px;
   
 }
 .subtext{
@@ -16,15 +21,14 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  min-height: 30vmin;
-  font-size: 20px;
+  padding: 30vh;
+  font-size: 50px;
 
 }
 .timer{
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  font-size: 20px;
+  font-size: 50px;
+  padding: 0px;
 }
