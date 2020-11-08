@@ -4,19 +4,16 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-family:  Arial, Helvetica, sans-serif;;
 }
 .center-text {
   text-align: center;
   font: 45px;
-  font-family: Arial, Helvetica, sans-serif;
-
-  
 }
 .subtext{
   text-align: center;
   padding: 30vh;
   font-size: 50px;
-  font-family: Arial, Helvetica, sans-serif;
 
 }
 .timer{
@@ -34,4 +31,8 @@ body {
 .font-friday{
   color:red;
   background: yellow;
+}
+.timer-elements{
+  padding-right: 10px;
+  font-family: Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
 }
