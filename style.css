@@ -8,12 +8,23 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  min-height: 100vh;
+  
+}
+.subtext{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 30vmin;
+  font-size: 20px;
+
 }
 .timer{
-  position: bottom;
-  top: 80%;
-  align-items: bottom;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  min-height: 50px;
+  font-size: 20px;
 }

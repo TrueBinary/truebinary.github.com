@@ -24,4 +24,7 @@ const x = setInterval(function() {
     clearInterval(x);
     document.getElementById("timer").innerHTML = "EXPIRED";
   }
+  if(document.getElementById("timer").style.display == "none"){
+    document.getElementById("timer").style.display = "block";
+   }
 }, 1000);
