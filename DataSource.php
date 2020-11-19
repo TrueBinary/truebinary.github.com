@@ -19,9 +19,9 @@ class DataSource
 
     const HOST = 'localhost';
 
-    const USERNAME = 'root';
+    const USERNAME = 'mrtrue';
 
-    const PASSWORD = 'test';
+    const PASSWORD = 'teste';
 
     const DATABASENAME = 'db_rating';
 
