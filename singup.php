@@ -3,7 +3,7 @@
 use Phppot\Member;
 
 if (!empty($_POST["signup-btn"])) {
-    require_once './Model/Member.php';
+    require_once '.Member.php';
     $member = new Member();
     $registrationResponse = $member->registerMember();
 }
