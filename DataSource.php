@@ -17,8 +17,6 @@ namespace Phppot;
 class DataSource
 {
 
-    const HOST = 'localhost';
-
     const USERNAME = 'mrtrue';
 
     const PASSWORD = 'teste';
@@ -50,7 +48,7 @@ class DataSource
      */
     public function getConnection()
     {
-        $conn = new \mysqli(self::HOST, self::USERNAME, self::PASSWORD, self::DATABASENAME);
+        $conn = new \mysqli(self::USERNAME, self::PASSWORD, self::DATABASENAME);
 
         if (mysqli_connect_errno()) {
             trigger_error("Problem with connecting to database.");

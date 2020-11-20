@@ -17,6 +17,7 @@ if (!empty($_POST["signup-btn"])) {
     <title>Register Form</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="page.css" rel="stylesheet">
+    <script src="jquery-3.5.1.js" type="text/javascript"></script>
     <meta name="theme-color" content="#563d7c">
 
 </head>
@@ -41,26 +42,29 @@ if (!empty($_POST["signup-btn"])) {
         }
         ?>
         <h1>Sing Up</h1>
-        <div class=" form-group" id="email-info">
-            <label for="exampleInputEmail">Email address</label>
+        <div class=" form-group" class="error-msg" id="error-msg">
+            <label for="exampleInputEmail"><span class="required error" id="email-info">Email address</span></label>
             <input type="email" class="form-control" id="email" name="email" aria-describedby=" emailHelp" placeholder="Enter email">
             <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
 
         </div>
-        <div class="form-group" id="signup-password-info">
-            <label for="exempleInputPassword">Password</label>
+        <div class="form-group">
+            <label for="exempleInputPassword"><span class="required error" id="signup-password-info">Password</span></label>
             <input type="password" class="form-control" id="signup-password" name="signup-password" placeholder="Password">
         </div>
         <div class="form-group">
-            <label for="exempleInputCpassword">Confirm Password</label>
-            <input type="password" class="form-control" id="confirm-passowrd" name="confirm-passowrd" placeholder="Cofirm Password">
+            <label for="exempleInputCpassword"><span class="required error" id="confirm-password-info">Confirm Password</></label>
+            <input type="password" class="form-control" id="confirm-password" name="confirm-password" placeholder="Cofirm Password">
             <small id="email-info" class="form-text text-muted">Make sure to type the same password </small>
         </div>
-        <button type="submit" class="singup-btn" id="singup-btn">Submit</button>
+        <button type="submit" class="singup-btn" name="signup-btn" id="singup-btn">Submit</button>
     </form>
     <script type="text/javascript">
         function signupValidation() {
             var valid = true;
+            $("#email").removeClass("error-field");
+            $("#password").removeClass("error-field");
+            $("#confirm-password").removeClass("error-field");
 
             var email = $("#email").val();
             var Password = $('#signup-password').val();
