@@ -3,7 +3,7 @@
 use Phppot\Member;
 
 if (!empty($_POST["signup-btn"])) {
-    require_once '.Member.php';
+    require_once './Member.php';
     $member = new Member();
     $registrationResponse = $member->registerMember();
 }
@@ -23,24 +23,7 @@ if (!empty($_POST["signup-btn"])) {
 </head>
 
 <body>
-    <form class="form-register" name="singup" action="" method="post" onsubmit="return signupValidation()">
-        <?php
-        if (!empty($registrationResponse["status"])) {
-        ?>
-            <?php
-            if ($registrationResponse["status"] == "error") {
-            ?>
-                <div class="server-response error-msg"><?php echo $registrationResponse["message"]; ?></div>
-            <?php
-            } else if ($registrationResponse["status"] == "success") {
-            ?>
-                <div class="server-response success-msg"><?php echo $registrationResponse["message"]; ?></div>
-            <?php
-            }
-            ?>
-        <?php
-        }
-        ?>
+    <form class="form-register" name="singup" action="" method="post">
         <h1>Sing Up</h1>
         <div class=" form-group" class="error-msg" id="error-msg">
             <label for="exampleInputEmail"><span class="required error" id="email-info">Email address</span></label>
