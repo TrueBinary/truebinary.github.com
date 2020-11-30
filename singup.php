@@ -10,7 +10,6 @@
 </head>
 
 <body>
-    <?php require_once "messages.php"; ?>
     <form class="form-register" name="singup" action="register.php" method="POST">
         <h1>Sing Up</h1>
         <div class="form-group" class="error-msg" id="error-msg">
