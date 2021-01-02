@@ -6,7 +6,7 @@ if (!empty($_GET["id"])) {
 }
 
 if (null == $id) {
-    header("location: list.php");
+    header("Location: list.php");
 } else {
     $pdo = Database::connect();
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -34,23 +34,32 @@ if (null == $id) {
             </div>
 
             <div class="form-horizontal">
-                <div class="control-group">
-                    <label class="control-label">Email Address</label>
-                    <div class="controls">
-                        <label class="checkbox">
-                            <?php echo $data["email"]; ?>
-                        </label>
-                    </div>
+                <div class="form-group has-success">
+                    <label class="control-label">
+                        <h4>Username:<?php echo $data["username"]; ?></h4>
+                    </label>
                 </div>
             </div>
             <div class="form-horizontal">
                 <div class="control-group">
-                    <label class="control-label">Password</label>
-                    <div class="controls">
-                        <label class="checkbox">
-                            <?php echo $data["password"]; ?>
-                        </label>
-                    </div>
+                    <label class="control-label">
+                        <h4>Email Address:<?php echo $data["email"]; ?></h4>
+                    </label>
+                </div>
+            </div>
+            <div class="form-horizontal">
+                <div class="control-group">
+                    <label class="control-label">
+                        <h4>Role: <?php echo $data["role"]; ?>
+                        </h4>
+                    </label>
+                </div>
+            </div>
+            <div class="form-horizontal">
+                <div class="control-group">
+                    <label class="control-label">
+                        <h4>Password:<?php echo $data["password"]; ?></h4>
+                    </label>
                 </div>
             </div>
 

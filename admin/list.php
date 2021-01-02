@@ -21,6 +21,10 @@
                     <tr>
                         <th>Id</th>
                         <th>Email</th>
+                        <th>Username</th>
+                        <th>Role</th>
+                        <th>Created at</th>
+                        <th>Last Update</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -34,6 +38,10 @@
                         echo " <tr>";
                         echo "<td>" . $row['id'];
                         echo "<td>" . $row['email'];
+                        echo "<td>" . $row['username'];
+                        echo "<td>" . $row["role"];
+                        echo "<td>" . $row["created_at"];
+                        echo "<td>" . $row["updated_at"];
                         echo '<td><a class="btn btn-primary" href="read.php?id='.$row['id'].'">Read</a>';
                         echo ' ';
                         echo '<a class="btn btn-success" href="update.php?id='.$row['id'].'">Update</a>';

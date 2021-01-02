@@ -1,10 +1,16 @@
 <?php
 
-session_start();
+if (!isset($_SESSION)) {
+    session_start();
+} else {
+    session_destroy();
+    session_start();
+}
 
 $data = $_POST;
 
 if (empty($data['email']) ||
+    empty($data['username']) ||
     empty($data['password']) ||
     empty($data['confirm-password'])){
         $_SESSION["messages"] [] = "Please fill all required fields";
@@ -29,10 +35,11 @@ try{
     exit;
 }
 
-$statement = $connection->prepare("SELECT * FROM users WHERE email = :email");
+$statement = $connection->prepare("SELECT * FROM users WHERE email = :email or username = :username");
 if($statement){
     $statement->execute([
-        ":email" => $data["email"]
+        ":email" => $data["email"],
+        ':username' => $data["username"]
     ]);
  
     $result = $statement->fetchAll(PDO::FETCH_ASSOC);
@@ -44,9 +51,10 @@ if($statement){
     }
 }
 
-$statement = $connection->prepare("INSERT INTO users (email, password) VALUES (:email, :password)");
+$statement = $connection->prepare("INSERT INTO users (username,email, password) VALUES (:username,:email, :password)");
 if($statement){
     $result =  $statement->execute([
+        ":username" => $data["username"],
         ":email" => $data["email"],
         ":password" => $data["password"],
     ]);
